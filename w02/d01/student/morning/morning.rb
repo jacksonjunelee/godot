@@ -5,33 +5,39 @@
 ################################################################################
 
 # Step 1
-# Require the file taylors.rb
+require 'pry'
+require_relative './taylors'
 
-# Require the file boneyard/exes.rb
+require_relative 'boneyard/exes'
 
 # Step 2
 # Methods
 
 def sing(lyric)
-  # missing code
+  "♬" + lyric + "♬"
 end
 
 def mmm_mmm(lyric)
-  # missing code
+  lyric + ", mmm-mmm"
 end
 
-
 def back_up(lyric, number_of_words)
-  # missing code
+  binding.pry
+   backup_sings = lyric.split(" ").last(number_of_words).join(" ")
+   "#{lyric} (#{backup_sings})"
 end
 
 # Step 3
-# Create the additional methods
 
-# repeat
+def repeat(lyric, repeat_last_word)
+  echo = lyric.split(" ").last(repeat_last_word).join(" ")
+  "#{lyric} "
+  "#{repeat_last_word}"
+end
 
-# double
-
+def double double_phrase
+  $stdin.gets(lyric, double).join
+end
 # stutter
 
 $stdout.puts(TAYLORS[0][:head])
@@ -48,13 +54,13 @@ exit unless mmm_mmm("And that's what they don't see") == "And that's what they d
 exit unless mmm_mmm("That's what they don't see").include?(", mmm-mmm")
 
 $stdout.puts(TAYLORS[0][:mouth])
-
+binding.pry
 exit unless repeat("'Cause the players gonna play") == ("'Cause the players gonna play, play, play, play, play")
 exit unless repeat("And the haters gonna hate").include?("hate, hate, hate, hate, hate")
 exit unless repeat("Baby, I'm just gonna shake").include?("shake, shake, shake, shake, shake")
 exit unless double("I shake it off") == "I shake it off, I shake it off"
 
-# Puts Taylor's neck
+$stdout.puts(TAYLORS[0][:neck])
 
 exit unless repeat("Baby, I'm just gonna shake").include?("shake, shake, shake, shake, shake")
 exit unless repeat("Heart-breakers gonna break").include?("break, break, break, break, break")
@@ -63,6 +69,6 @@ exit unless repeat("Heart-breakers gonna break").include?("break, break, break, 
 exit unless repeat("And the fakers gonna fake").include?("fake, fake, fake, fake, fake")
 exit unless double("I shake it off") == "I shake it off, I shake it off"
 
-# Puts Taylor's shoulders
+$stdout.puts(TAYLORS[0][:shoulder])
 
 exit unless stutter("I shake it off, I shake it off") == ("I, I, I shake it off, I shake it off")
