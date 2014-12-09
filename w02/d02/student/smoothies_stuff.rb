@@ -1,32 +1,5 @@
-# Smoothies
+# array of strings
 
-## Good Morning!
-
-![:image](http://xdind.com/wp-content/uploads/2013/03/Blender.gif)
-
-This morning we're going to blend up some delicious smoothies.
-
-Each section below features a different data structure representing the ingredients to a smoothie.
-
-For each section write a method that takes the `smoothie_ingredients` variable as *input*
-and returns a **string** as *output*.
-
-smoothie_ingredients.each do |ingredient|
-The string should be the list of characters from all the names from the `smoothe_ingredients` shuffled up and with spaces removed. (We don't want any air bubbles in our smoothies!)
-
-Example:
-
-```
-ingredients = [ "apples", "bananas", "pears" ]
-blend(ingredients)
-#=> "esabasnpapraeplans"
-```
-
-Create a file called `smoothies.rb` to work in.
-
-## Part 1: An array of strings
-
-```
 smoothie_ingredients = [
   'flax seeds',
   'chia seeds',
@@ -51,11 +24,9 @@ smoothie_ingredients = [
   'mango',
   'hemp milk'
 ]
-```
 
-## Part 2: A hash
+# hash
 
-```
 smoothie_ingredients = {
   'flax seeds'      => '1 tbsp',
   'chia seeds'      => '1 tbsp',
@@ -80,11 +51,9 @@ smoothie_ingredients = {
   'mango'           => '0.25 cup',
   'hemp milk'       => '1 cup'
 }
-```
 
-## Part 3: An array of hashes
+#array of hashes
 
-```
 smoothie_ingredients = [
   { :name => 'flax seeds',      :amount => '1 tbsp'   },
   { :name => 'chia seeds',      :amount => '1 tbsp'   },
@@ -109,11 +78,9 @@ smoothie_ingredients = [
   { :name => 'mango',           :amount => '0.25 cup' },
   { :name => 'hemp milk',       :amount => '1 cup'    }
 ]
-```
 
-## Part 4: An array of nested hashes
+# array of nested hashes
 
-```
 smoothie_ingredients = [
   { :name => 'flax seeds',      :measurement => { :amount => 1,    :unit => "tbsp" }},
   { :name => 'chia seeds',      :measurement => { :amount => 1,    :unit => "tbsp" }},
@@ -138,10 +105,3 @@ smoothie_ingredients = [
   { :name => 'mango',           :measurement => { :amount => 0.25, :unit => "cup"  }},
   { :name => 'hemp milk',       :measurement => { :amount => 1,    :unit => "cup"  }}
 ]
-```
-
-## Part 5: Adding it all up
-
-Can you add up all the ingredient amounts?  Go back and write methods that will process the smoothie amounts and record the size of each smoothie.
-
-> How would you handle the differences in units?
