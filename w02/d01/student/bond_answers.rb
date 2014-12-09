@@ -1,9 +1,21 @@
 require 'pry'
 require_relative 'bond_data'
 
-movie_gross = []
 movie_gross = :gross
-BOND_DATA.each {|movie_gross| movie_gross.sum(movie_gross[:gross])}
+BOND_DATA.each {|movie_gross| puts movie_gross[:gross]}
+total = []
+total.push(movie_gross.to_s[:gross])
+BOND_DATA.each {|movie_gross| total.push( movie_gross[:gross] ) }
+movie_gross
+
+
+
+
+
+movie_gross = 0
+BOND_DATA.each do |total|
+
+end
 
 binding.pry
 
@@ -18,6 +30,36 @@ binding.pry
 # puts sum
 
 # 2. Create a new array with the names of the all actors who have ever played Bond, but with no duplicates. (One Roger Moore is more than enough.) Assign it to a sensibly-named variable.
-bonds = :actor
-BOND_DATA.each {|bonds| puts bonds[:actor]}
-BOND_DATA.each {|person| bonds_actors.push( person[:actor])}
+
+bonds = []
+bonds_actors = :actor
+BOND_DATA.each {|bonds_actors| bonds.push( bonds_actors[:actor])}
+puts bonds.uniq!
+
+
+
+# 3. Create a new array of strings from BOND_DATA with the names of all the Bond films. Assign it to a sensibly-named variable.
+
+films = []
+film_titles = :title
+BOND_DATA.each {|film_titles| films.push( film_titles[:title])}
+puts films
+
+# 4. Create a new array of hashes of only the bond films released on odd-numbered years. Assign it to a sensibly-named variable.
+
+odd_year = ([:year] % 2 != 0)
+if odd_year
+
+# 5. Create a variable called worst_grossing_bond. Use all the tools at your disposal (and perhaps one or two you have yet to discover) to iterate through all the films and return the film with the lowest gross. Store the returned film hash in the variable worst_grossing_bond.
+
+worst_grossing_bond = []
+movie_gross = :gross
+BOND_DATA.each {|movie_gross| worst_grossing_bond.push( movie_gross[:gross])}
+puts worst_grossing_bond.last
+
+# 6. Similarly, create a variable called highest_grossing_bond and use your programming powers to return the highest grossing film hash, storing it to highest_grossing_bond.
+
+highest_grossing_bond = []
+movie_gross = :gross
+BOND_DATA.each {|movie_gross| highest_grossing_bond.push( movie_gross[:gross])}
+puts highest_grossing_bond.first
