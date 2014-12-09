@@ -63,3 +63,5 @@ highest_grossing_bond = []
 movie_gross = :gross
 BOND_DATA.each {|movie_gross| highest_grossing_bond.push( movie_gross[:gross])}
 puts highest_grossing_bond.first
+
+# 7. Create a new array, movies_per_actor, where each value in the array is a hash where the key is the Bond actor's name and the value is their total number of films. For example { "Daniel Craig" => 3 }
