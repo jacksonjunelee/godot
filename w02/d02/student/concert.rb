@@ -1,5 +1,7 @@
 class Concert
 
+  attr_accessor :band, :city, :venue, :date
+
   def initialize(b_band, c_city, v_venue, d_date)
     @band  = b_band
     @city  = c_city
@@ -7,37 +9,37 @@ class Concert
     @date  = d_date
   end
 
-    def band= (b)
-      @band = b
-    end
+    # def band= (b)
+    #   @band = b
+    # end
 
-    def band
-      @band
-    end
+    # def band
+    #   @band
+    # end
 
-    def city= (c)
-      @city = c
-    end
+    # def city= (c)
+    #   @city = c
+    # end
 
-    def city
-      @city
-    end
+    # def city
+    #   @city
+    # end
 
-    def venue= (v)
-      @venue = v
-    end
+    # def venue= (v)
+    #   @venue = v
+    # end
 
-    def venue
-      @venue
-    end
+    # def venue
+    #   @venue
+    # end
 
-    def date= (d)
-      @date = d
-    end
+    # def date= (d)
+    #   @date = d
+    # end
 
-    def date
-      @date
-    end
+    # def date
+    #   @date
+    # end
 
 end
 
