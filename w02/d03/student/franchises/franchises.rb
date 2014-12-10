@@ -6,7 +6,7 @@ chelsea_mcd = McDonalds.new(
   "http://www.yelp.com/biz/mcdonalds-new-york-136",
   "Marco Diaz"
 )
-chelsea_mcd.location = "335 8th Ave, New York, NY  10001"
+chelsea_mcd.location = "335 8th Ave, New York, NY 10001"
 chelsea_mcd.capacity = 105
 chelsea_mcd.open_at = "06:00"
 chelsea_mcd.close_at = "23:00"
