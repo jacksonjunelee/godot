@@ -24,7 +24,7 @@ students = [
 #
 # 1. List the students in the array above by printing them to standard out.
 # 2. Print out only the first initials of the students above (eg, "Dennis" --> "D.").
-students.each { |student| $stdout.puts(student.chars.first) }
+students.each { |student| $stdout.puts(student.chars.first) + "."}
 
 # 3. Create a new array of just the students whose names start with vowels.
 #

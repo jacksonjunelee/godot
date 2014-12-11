@@ -2,47 +2,36 @@ class Apartment
 
   attr_reader :unit, :num_beds, :num_baths, :tenants
 
-    def initialize(u, b, a, t)
+    def initialize(u, b, a)
       @unit      = u
       @num_beds  = b
       @num_baths = a
-      @tenants   = t
     end
 
-    def unit= (u)
-      @unit = u
+    def bed= (be)
+      @bed = be
     end
 
-    def unit
-      @unit
+    def bed
+      @bed
     end
 
-    def num_beds= (b)
-      @num_beds = b
+    def bath= (ba)
+      @bath = ba
     end
 
-    def num_beds
-      @num_beds
+    def bath
+      @bath
     end
 
-    def num_baths= (a)
-      @num_baths = a
-    end
+    def price= (p)
 
-    def num_baths
-      @num_baths
-    end
-
-    def tenants= (t)
-      @tenants = t
-    end
-
-    def tenants
-      @tenants
-    end
-
-
-
+b1 = Apartment.new("B", 2, 1)
+b1.bed=(1000)
+b1.bath=(500)
+b1.price=("#{b1.bed} + #{b1.bath}")
 
 
 end
+
+###########I UNDERSTAND THE METHODS, BUT NEED TO COMPLETE THE TASKS#######
