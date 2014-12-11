@@ -1,6 +1,9 @@
 class Human
 
-  def initialize
+  def initialize (name, age)
+    puts "I occur due to the use of super."
+    @name = name
+    @age = age
     @walks_upright = true
   end
 
