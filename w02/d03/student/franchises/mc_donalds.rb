@@ -1,41 +1,50 @@
-class McDonalds
-  attr_accessor :location, :capacity, :open_at, :close_at, :yelp, :manager
-  attr_reader   :location
+require 'pry'
+# Create a file for the McDonalds class (the name is in CamelCase, and the file should be in snake_case), and then define the class inside it. Create the file franchises.rb, load the McDonalds class with require_relative, and then run the following code to make sure it works:
 
-  def initialize(location, capacity, open_at, close_at, yelp, manager)
-    @location = location
-    @capacity = capacity
-    @open_at = open_at
-    @close_at = close_at
+class McDonalds
+
+  @@served = 0
+
+  attr_accessor :location, :capacity, :open_at, :close_at, :yelp, :manager, :served
+
+  def initialize(loc,cap,open,close,yelp,mgmt)
+    @location = loc
+    @capacity = cap
+    @open_at = open
+    @close_at = close
     @yelp = yelp
-    @manager = manager
+    @manager = mgmt
     @served = 0
   end
 
+  def order(num, item)
+    @@served += num
+    @served += num
+    chelsea_mcd.order(2, "shakes")
+    "#{@@greeting} Here is your order of #{num} #{item}. Thank you."
+  end
+
   def is_open_at?(time)
-    open = convert_time(@open_at)
-    close = convert_time(@close_at)
-    time = convert_time(@time)
-
-    (open <= time) && (time <= close)
+    # open_at.gsub(":", '').to_i <= time.gsub(":", '').to_i && time.gsub(":", '').to_i <= close_at.gsub(':', '').to_i
+    time.gsub(':', '').to_i.between?( open_at.gsub(':', '').to_i, close_at.gsub(':', '').to_i)
   end
 
-def convert_time(time)
-  if time.include?("pm")
-    time.gsub("am","").gsub("pm","").gsub(":","").to_i + 1200
-  else
-    time.gsub("am","").gsub("pm","").gsub(":","").to_i
-  end
-end
-
-def order(num, menu_item)
-  @served += num
-  "Here's your order #{num} #{menu_item}. Thank you."
-end
-
-attr_reader :served
-  # def served
+  attr_reader :served, :mc_rib, :greeting
+  # def self.served
   #   @served
   # end
-end
 
+  @@served = 0
+  def served
+    @@served
+  end
+
+  @@mc_rib = false
+  def mc_rib
+    @mc_rib
+  end
+
+  @@greeting = "Welcome to McDonalds, may I take your #{order}?"
+
+binding.pry
+end
