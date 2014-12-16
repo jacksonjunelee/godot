@@ -5,7 +5,7 @@ module AppName
       $stderr.puts "We have an error."
       logger.error "We have an error."
       logger.info  "Made to: #{request.url}"
-
+binding.pry
       status 200
       if request.params.length != 0
         body "The request's params were: '#{request.params}'.\n"
@@ -15,3 +15,5 @@ module AppName
     end
   end
 end
+
+
