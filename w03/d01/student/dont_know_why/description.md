@@ -1,9 +1,9 @@
 ## Part 1
 
 ```ruby
-module AppName                    # 1.  What is `AppName` and why do we use it? `AppName` is the CamelCased title of the module used to run a set of commands in server.rb.
+module AppName                    # 1.  What is `AppName` and why do we use it? `AppName` is the CamelCased, NAMESPACED title of the module used to run a set of commands in server.rb.
   class Server < Sinatra::Base    # 2.  What is `Server`? `Server` is the subclass of commands inheriting from the superclass, Sinatra.
-                                  # 3.  What is `Sinatra`? Sinatra is the rack the module on which the module is running.
+                                  # 3.  What is `Sinatra`? Sinatra is a MODULE.
                                   # 4.  What is `Base`?
 
     enable :logging               # 5.  What is `enable`? `enable` is an array.
