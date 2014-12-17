@@ -1,0 +1,7 @@
+.important {
+      font-size: 30px;
+      margin: 20px 0px 20px 0px;
+      border: 20px rgba(255,255,255,1);
+      border-radius: 15px;
+      height: 200px;
+  }
