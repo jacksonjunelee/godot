@@ -1,8 +1,11 @@
+require 'pry'
 require_relative 'simple_assert'
 require_relative '../lib/anagram'
 include SimpleAssert
+include Anagram
 
 assert_that("#anagram? returns true when given 2 words that are anagrams", anagram?("steven", "events"), true )
+binding.pry
 assert_that("#anagram? returns false when given 2 words that aren't anagrams", anagram?("kamari", "kristen"), false )
 assert_that("#anagram? returns false when given 2 words that have the same letters but are different lengths", anagram?("nose", "nosey"), false )
 assert_that("#anagram? is case insensitive", anagram?("Steven", "events"), true )
