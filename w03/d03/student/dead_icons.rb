@@ -115,17 +115,62 @@ dead_icons = [
 
 # make an array of only the dead actors
 
+dead_actors = []
+  dead_icons.each do |x|
+    if x[:occupation] == "actor" # && [:death_disputed] == false
+    dead_actors.push(x)
+    end
+  end
+
 # make an array of only the icons who died at the age of 27
+
+dead_at_27 = []
+dead_icons.each do |icon|
+  if icon[:age_at_death] == 27
+  dead_at_27.push(icon)
+  end
+end
+
+# ----------or----------
+
+dead_at_27 = dead_icons.select { |y| y[:age_at_death] == 27}
+
 
 # make an array of only the icons who are rumored to still be among us
 
+death_disputed = dead_icons.select do |hash|
+  hash[:death_disputed] == true
+end
+
 # dig into this data structure and remove the rumored_cause_of_death from Cass Elliot's data structure (it's rude and unnecessary)
+
+cass_elliot = dead_icons.find { |x| x[:name].include?("Cass Elliot")}
+cass_elliot.delete(:rumored_cause_of_death)
 
 # use sweet, sweet Ruby to identify the artist with the most testaments to greatness
 
+sorted_by_greatness_count = dead_icons.max_by do |z|
+  z[:testaments_to_greatness].size
+end
+
 # return any testments to greatness that were released in 1967
 
+testaments_from_67 = []
+dead_icons.each do |icon|
+  icon[:testaments_to_greatness].each do |album_or_movie|
+    if album_or_movie.include?('1967')
+      testaments_from_67.push(album_or_movie)
+    end
+  end
+end
+
+  binding.pry
 # create an array of testments to greatness that were released in the 1990s
+
+testaments_from_the_90s = []
+dead_icons.each do |icon|
+
+
 
 # return an array of aliases (i.e. "2pac", "Mama Cass", et cetera)
 
