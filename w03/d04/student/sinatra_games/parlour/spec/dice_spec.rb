@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'simple_assert'
 require_relative '../dice.rb'
 include SimpleAssert
@@ -25,6 +26,10 @@ assert_that(
   Parlour::Dice
 )
 
+set_of_dice = Parlour::Dice.new([6, 6])
+assert_that("initialize creates an array_dice instance variable", set_of_dice.array_dice, [6, 6]
+  )
+
 three_six_sided_dice = [6, 6, 6]
 assert_that(
   'Parlour::Dice#roll returns an array of rolled dice',
@@ -32,23 +37,29 @@ assert_that(
   Array
 )
 
-# four_six_sided_dice = [6, 6, 6, 6]
-# roll = Parlour::Dice.new(four_six_sided_dice).roll
-# assert_that(
-#   'Parlour::Dice#roll returns an array of random Fixnums',
-#   roll.all? { |n| n.is_a? Fixnum },
-#   true
-# )
+dice = Parlour::Dice.new([6, 6, 6])
+rolled_dice = dice.roll
+assert_that("number of rolled dice is same as number of array_dice", rolled_dice.length, 3)
 
-# four_six_sided_dice = [6, 6, 6, 6]
-# r1 = Parlour::Dice.new(four_six_sided_dice).roll
 
-# assert_that(
-#   "Parlour::Dice#roll's array contains random numbers",
-#   r1.all? { |n| n.between?(1, 6) },
-#   true
-# )
+four_six_sided_dice = [6, 6, 6, 6]
+roll = Parlour::Dice.new(four_six_sided_dice).roll
+assert_that(
+  'Parlour::Dice#roll returns an array of random Fixnums',
+  roll.all? { |n| n.is_a? Fixnum },
+  true
+)
 
+
+four_six_sided_dice = [6, 6, 6, 6]
+r1 = Parlour::Dice.new(four_six_sided_dice).roll
+
+assert_that(
+  "Parlour::Dice#roll's array contains random numbers",
+  r1.all? { |n| n.between?(1, 6) },
+  true
+)
+binding.pry
 # five_six_sided_dice = [6, 6, 6, 6, 6]
 # assert_that(
 #   'Parlour::Dice#roll_and_sum returns the sum of the rolled dice',
