@@ -1,0 +1,52 @@
+/*==================================*/
+/* Write Your Styles below!!! */
+/*==================================*/
+
+h1 {
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-weight: bold;
+}
+
+.green {
+  background-color: rgb(148, 179, 148);
+  border: 5px dashed green;
+}
+
+.ring {
+  border-color: gray;
+}
+
+.example {
+  font-style: italic;
+}
+
+#bullseye {
+  background-color: #d04a41;
+}
+
+#bullseye:hover {
+  opacity: 0.5;
+}
+
+h1, h2 {
+  font-size: 3em;
+}
+
+.target.container {
+  background-color: #facade;
+}
+
+.yellow > .example {
+  opacity: 0.0;
+}
+
+p:first-child {
+  text-decoration: underline;
+}
