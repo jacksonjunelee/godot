@@ -37,3 +37,23 @@ img {
 /*==================================*/
 /* Write Your Styles below!!! */
 /*==================================*/
+
+.gutter > .heart {
+  position: relative;
+  right: 165px; top: 60px;
+}
+
+.gutter > .butterflies {
+  position: relative;
+  right: 185px; top: 140px;
+}
+
+.gutter > .breadbasket {
+  position: relative;
+  left: 245px; top: 242px;
+}
+
+.gutter > .wishbone {
+  position: relative;
+  left: 225px; top: 50px;
+}
