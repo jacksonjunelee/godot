@@ -16,3 +16,29 @@ html {
 /* ======================================= */
 /*    Students: Write Your Styles Below!   */
 /* ======================================= */
+
+img {
+  position: relative;
+  top: 50px;
+  float: left;
+}
+
+p:first-child {
+  position: relative;
+  font-size: 100px;
+  color: rgb(16, 118, 221);
+  font-weight: 900;
+  text-align: right;
+  float: right;
+  margin-top: 200px;
+}
+
+p:nth-child(2) {
+  position: relative;
+  font-size: 100px;
+  color: rgb(249, 68, 30);
+  font-weight: bold;
+  text-align: right;
+  float: right;
+  margin-top: -100px;
+}
