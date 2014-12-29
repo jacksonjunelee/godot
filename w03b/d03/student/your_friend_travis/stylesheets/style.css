@@ -12,3 +12,35 @@ html, body {
 
 /* background color in header & footer: #323232 */
 /* text color code for the header/footer: #DBDBDB       */
+
+div {
+  background-color: #323232;
+
+}
+
+li {
+  display: inline-block;
+  color: #DBDBDB;
+}
+
+img {
+  position: relative;
+  z-index: -1;
+  margin-top: 80px;
+}
+
+.description:first-child {
+  position: relative;
+  top: 30px;
+  left: 150px;
+  bottom: 200px;
+  margin-right: 50px;
+}
+
+.description:nth-child(2) {
+  position: relative;
+  top:20px;
+  left: 500px;
+  bottom: 500px;
+  right: 500px;
+}
