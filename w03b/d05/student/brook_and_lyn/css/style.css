@@ -1,6 +1,6 @@
-/* 
+/*
 
-## Style Hints: 
+## Style Hints:
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,3 +10,10 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+
+div {
+  display: inline-block;
+  border-color: gray;
+  border-width: 10px;
+  border-style: solid;
+}
