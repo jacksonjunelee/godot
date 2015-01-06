@@ -7,4 +7,11 @@
 <body>
   <%= yield %>
 </body>
+<footer>
+  <p>Recently Viewed Departments:
+    <% @pages_viewed.each do |page| %>
+    <%= page %>
+    <% end %>
+  </p>
+</footer>
 </html>

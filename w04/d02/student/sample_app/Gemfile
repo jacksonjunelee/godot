@@ -6,3 +6,7 @@ gem 'sinatra-contrib'
 
 # TODO add Redis
 # TODO add pry to the development group
+
+gem 'redis'
+gem 'pry-rails', :group => :development
+bundle install
