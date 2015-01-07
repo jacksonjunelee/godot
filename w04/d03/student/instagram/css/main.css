@@ -1,0 +1,66 @@
+body {
+  font: Helvetica, Arial, sans-serif;
+  background: #fff url("../images/bgtile.png") repeat-x;
+}
+
+div .page {
+  border: 1px solid yellow;
+  margin: 0 auto;
+}
+
+div .footer {
+  border: 1px solid green;
+}
+div .content {
+  border: 1px solid black;
+/*  position: relative;*/
+  width: 400px;
+  display: inline-block;
+  float: right;
+  width: 550px;
+
+}
+
+div .heading {
+  border: 1px solid orange;
+  display: inline-block;
+  float: right;
+  width: 550px;
+/*  position: relative;*/
+/*  vertical-align: middle;*/
+  font-family: Arial;
+  color: #0000cc;
+  font-weight: bold;
+
+}
+
+div .text {
+  border: 1px solid red;
+/*  position: relative;*/
+/*  vertical-align: middle;*/
+  color: black;
+  display: inline-block;
+  float: right;
+  width: 550px;
+}
+
+/*.phones {
+/*  position: relative;*/
+
+}
+
+/*.img {
+  position: relative;
+  bottom: 40px;
+}*/
+
+.footer {
+  display: inline;
+  text-align: center;
+}
+/*
+#shadow {
+  color: #22cc33;
+}*/
+
+
