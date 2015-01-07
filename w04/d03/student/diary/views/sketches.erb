@@ -1,0 +1,19 @@
+<h1>Sketches:</h1>
+
+<ul>
+  <% @sketches.each do |sketch| %>
+    <label>Sketch from <%= sketch["sketch_date"] %></label>
+    <li><img src="<%= sketch["sketch_url"] %>" alt=""></li>
+  <% end %>
+</ul>
+<form method="post" action="/sketches">
+<label>
+  <input type="date" name="entry_date">
+</label>
+
+<label>
+  <input type="img" name="sketch_url">
+</label>
+
+
+</form>
