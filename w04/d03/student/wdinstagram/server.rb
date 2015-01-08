@@ -31,6 +31,7 @@ module Wdinstagram
     get('/entries/new') do
       render(:erb, :new, :layout => :default)
     end
+          # binding.pry
 
     get('/entries/:id') do
       render(:erb, :index, :layout => :default)
