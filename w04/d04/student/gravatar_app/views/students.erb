@@ -1,4 +1,5 @@
 <ul>
+<<<<<<< HEAD
   <% @students.each do |student| %>
     <li>
       <a href="/students/<%= student %>">
@@ -6,4 +7,13 @@
       </a>
     </li>
   <% end %>
+=======
+<% @students.each do |student| %>
+  <li>
+    <a href="/students/<%= student %>">
+      <img src="http://www.gravatar.com/avatar/<%= student %>" alt="picture">
+    </a>
+  </li>
+<% end %>
+>>>>>>> 9f82b8f6bc2185ccbefef315520a757d38870d0f
 </ul>
