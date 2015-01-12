@@ -1,3 +1,7 @@
+html {
+  font-family: sans-serif;
+}
+
 h1 {
   text-transform: uppercase;
   text-align: center;
@@ -33,4 +37,8 @@ label {
 input {
   font-size: 1em;
   margin: 10px auto;
+}
+
+.box p, .box li {
+  font-size: 1.75em;
 }
