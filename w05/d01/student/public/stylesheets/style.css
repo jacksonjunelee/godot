@@ -1,0 +1,29 @@
+h1 {
+text-transform: uppercase;
+text-align: center;
+font-size: 6em;
+margin: 0;
+}
+
+.box a {
+border: 1px solid black;
+width: 30em;
+margin: 10px auto;
+border-radius: 2em;
+}
+
+a {
+float: right;
+font-size: 1.75em;
+margin-right: 30px;
+
+}
+
+form {
+clear: both;
+margin-top: 60px;
+}
+
+label, input {
+display: block;
+}
