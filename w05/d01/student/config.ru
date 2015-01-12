@@ -1,5 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require_relative 'sinatra_app'
+require_relative 'sinatra'
 
-run Server
+run SinatraApp::Server
