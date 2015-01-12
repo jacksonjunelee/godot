@@ -22,12 +22,22 @@ module SinatraApp
     end
 
     get '/:username' do
-      if session[:name] != params[:username]
-        redirect to('/')
+      # if session[:name] != params[:username]
+      #   redirect to('/')
+      # end
+      authorize! #calls of authorize! method below
+
       @name = params[:username]
       @secrets = $persons_secrets.lrange "diary_app:#{@name}", 0, -1
       render :erb, :user, layout: :default
     end
 
+    def authorize!
+      if session[:name] != params[:username]
+        redirect to('/') #returns to log in page
+      end
+    end
+
   end
+
 end
