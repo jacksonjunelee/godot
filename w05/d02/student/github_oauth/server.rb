@@ -30,6 +30,7 @@ module GithubOauth
           "Accept" => "application/json"
         }
       )
+
       session[:access_token] = response["access_token"]
       get_user_info
       redirect to('/')
@@ -53,6 +54,7 @@ module GithubOauth
           "User-Agent"    => "OAuth Test App"
         }
       )
+            binding.pry
       session[:email]      = response["email"]
       session[:name]       = response["name"]
       session[:user_image] = response["avatar_url"]
