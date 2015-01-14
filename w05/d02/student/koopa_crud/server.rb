@@ -22,5 +22,9 @@ module KoopaCrud
       render :erb, :new
     end
 
+    get'/koopas' do
+
+    end
+
   end
 end
