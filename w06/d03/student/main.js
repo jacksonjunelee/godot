@@ -1,6 +1,6 @@
 var student = "Kamari";
 
-console.log("Welcome, " + student + "!")
+console.log("Welcome, " + student + "!");
 
 // primitives
 // use === (threequal) to compare
@@ -24,22 +24,26 @@ var anArray, anObject;
 anArray = [aString, anInteger, aFloat, aBoolean];
 anObject = {instructor: "Travis", dog: "Kait"};
 
-// function
+// function (expression)
 var aFunction;
 
 aFunction = function(){
   console.log("hello world");
 }
 
-aFunction.call()
-aFunction()
+// function (declaration)
+// avoud doing it this way!
+// function anotherFunction(){
+//   console.log("hello world!");
+// };
 
-def say_Its_Your_Bday(age)
-  puts "It's your bday!"
-  puts "I hope #{age} is better than #{age-1}"
-end
+// def say_Its_Your_Bday(age)
+//   puts "It's your bday!"
+//   puts "I hope #{age} is better than #{age-1}"
+// end
 
 var sayItsYourBday = function(age){
   console.log("It's your bday!");
-  console.log("I hope " + age + " is better than " + (age - 1) + "!")
-};
+  console.log("I hope " + age + " is better than " + (age - 1) + "!");
+
+  return true; // have to explicitly return a value, otherwise it returns undefined
