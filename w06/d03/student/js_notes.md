@@ -7,7 +7,7 @@ After you've made an attempt go back and spend 10 minutes checking your answers 
 If you didn't do last night's reading, [start reading it now](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) and answer the following:
 
 - Who created JavaScript?
-  Bremdan Eich (1996)
+  Brendan Eich (1996)
 - How is JavaScript related to Java?
   Only in name.
 - What is ECMAScript?
@@ -18,8 +18,9 @@ If you didn't do last night's reading, [start reading it now](https://developer.
   yes.
 - What are the main differences between JavaScript and most other languages?
   no concept of input/output
+  it is prototypal
 - What are the types in JavaScript?
-  numbers, strings, booleans, symbols, functions, objects(func, arr, date, RegExp), null, undefined
+  numbers, strings, booleans, symbols (ECMA v6), objects(func, arr, date, RegExp), null, undefined, NaN
 
 - What is NaN?
   "undefined"
