@@ -54,7 +54,7 @@ module GithubOauth
           "User-Agent"    => "OAuth Test App"
         }
       )
-            binding.pry
+            # binding.pry
       session[:email]      = response["email"]
       session[:name]       = response["name"]
       session[:user_image] = response["avatar_url"]
