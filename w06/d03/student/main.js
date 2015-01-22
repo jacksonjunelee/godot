@@ -32,7 +32,7 @@ aFunction = function(){
 }
 
 // function (declaration)
-// avoud doing it this way!
+// avoid doing it this way!
 // function anotherFunction(){
 //   console.log("hello world!");
 // };

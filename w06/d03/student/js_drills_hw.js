@@ -6,7 +6,7 @@ console.log("homework.js linked!");
 
 // Link this JavaScript file to an HTML document.
 // You'll know the file is correctly linked if the console says "homework.js linked!"
-
+// DONE
 ////////////////////////////////////////////////
 // Part 2: Working With Data Structures
 ////////////////////////////////////////////////
@@ -21,8 +21,12 @@ var album1 = {
 };
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named variable.
+var albumLabel = album1["albumDetails"]["label"];
+console.log(albumLabel);
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
+album1["title"] = "Talking Heads: 77";
+
 
 var album2 = {
   title: "More Songs About Buildings and Food",
@@ -43,9 +47,10 @@ var album3 = {
 };
 
 // 3. Access album2's formats array and use an array method to add "LP" to album3's formats
+album3["albumDetails"]["formats"].push(album2["albumDetails"]["formats"][0]);
 
 // 4. Change the release date of album3 from a string into a Date object
-
+album3["albumDetails"]["released"] = new Date(album3["albumDetails"]["released"]);
 
 var album4 = {
   title: "Remain in Light",
@@ -56,6 +61,7 @@ var album4 = {
 };
 
 // 5. Add the label "Sire" to album4's details
+
 
 
 var album5 = {
@@ -176,12 +182,28 @@ var dave   = { name: "Dave", bornOn: "01/21/2014", password: "buffDog", password
 
 
 // 1. Create a variable called validatePasswordsMatch, and assign it to a function that takes two arguments, `pw` and `pwConf`.
+
 //    Make this function return true if the password and password confirmation match, and false if they don't.
 
 // 2. Use your function on marvin and dave's password and passwordConfirmation attributes to make sure it works.
+var validatePasswordsMatch = function(pw, pwConf) {
+    if ( marvin["password"] === marvin["passwordConfirmation"] ) {
+      return true;
+    } else {
+      return false;
+    }
+    if ( dave["password"] === dave["passwordConfirmation"] ) {
+      return true;
+    } else {
+      return false;
+    }
+  } //CAN'T GET THIS TO WORK AS A TOTAL FXN, ONLY AS A LINE IN THE CONSOLE //
 
 // 3. Create a variable called validatePasswordLength, and assign it to a function that takes a single argument, `pw`.
 //    Make this function return true if the password length is between 8 and 16 characters, and false otherwise.
+var validatePasswordLength = function(pw) {
+  if ( marvin.pw.length )
+};
 
 // 4. Use your function on marvin and dave's respective passwords to make sure it works.
 
