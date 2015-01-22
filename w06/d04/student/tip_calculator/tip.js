@@ -2,6 +2,8 @@ console.log("loaded tip.js");
 
 var amountControl = document.querySelector("#amount");
 var taxControl = document.querySelector("#tax");
+var totalControl = document.querySelector("#total");
+
 var calculateTotalBill = function(){
   // get the amt from the input
   // convert the amount to float
@@ -15,5 +17,5 @@ var calculateTotalBill = function(){
   var tipAmount = (amountControl.value * tip);
   // return tipAmount + (amount * tax) + amount
   var total = (tipAmount + (amount * tax) + amount);
-  return total
+  totalControl.textContent = total;
 };
