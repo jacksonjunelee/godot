@@ -19,3 +19,30 @@ var calculateTotalBill = function(){
   var total = (tipAmount + (amount * tax) + amount);
   totalControl.textContent = total;
 };
+
+var h1Tag = document.querySelector("h1");
+//
+var greeting = function(event){
+  alert("hello!");
+  console.log(event);
+};
+
+// event handler
+var handleMouseOver = function(event) {
+  console.log(event);
+  console.log("mouseover");
+};
+// registering event listeners
+h1Tag.addEventListener("click", greeting);
+totalControl.addEventListener("mouseover", handleMouseOver);
+
+var formSubmitHandler = function(event) {
+  event.preventDefault();
+  console.log("I will not be subitted to this");
+  calculateTotalBill();
+};
+
+// prevents the default behavior of the form
+var form = document.querySelector("form");
+form.addEventListener("submit", formSubmitHandler);
+
