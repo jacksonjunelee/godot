@@ -38,7 +38,7 @@ totalControl.addEventListener("mouseover", handleMouseOver);
 
 var formSubmitHandler = function(event) {
   event.preventDefault();
-  console.log("I will not be subitted to this");
+  console.log("I will not be submitted to this");
   calculateTotalBill();
 };
 
