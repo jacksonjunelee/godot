@@ -10,7 +10,10 @@ for (var i = 0; i < 805; i++) {
   tile.setAttribute("class", "tile");
   canvas[0].appendChild(tile);
   tile.addEventListener("mouseover", mouseEnter);
+   // setTimeout(function(event) {
+   //    event.target.style.color = ""; 500;
+   //    false;}
 }
-
+var colors = ["red", "goldenrod", "blue"];
 
 
