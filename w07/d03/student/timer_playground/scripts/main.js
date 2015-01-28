@@ -13,10 +13,10 @@ var debate = function(){
   }
 };
 
-// setTimeout takes 2 arguments. The first is a fxn that holds the code we want to execute. The 2nd is the delay in ms. Thus, the code below will run after 5 sec.
-// setTimeout(function(){
-// console.log("Game of Thrones, Season 5. Oh yeah.");
-// }, 5000);
+// setTimeout takes two arguments, the first is a function which holds the code we want to execute, and the second is the delay in milliseconds. Thus, the code below will run after 5 seconds.
+setTimeout(function(){
+  console.log("Game of Thrones, Season 5. Oh yeah.");
+}, 5000);
 
 var createP = function(){
   var newP = document.createElement("p");
@@ -26,30 +26,34 @@ var createP = function(){
 
 setTimeout(createP, 6000);
 
+// each time we invoke setInt.erval, it returns a timerID, and we store these IDs in variables, in case we want to clear them later on
 var timerOne = setInterval(debate, 1000);
 var timerTwo = setInterval(debate, 1000);
 var timerThree = setInterval(debate, 1000);
-var timerFour = setInterval(debate, 1000);
 
-clearInterval(timerOne);
+// clears out the two extra intervals, so that only one potAYtoh/poTAHtoh debate rages on place.
+clearInterval(timerTwo);
+clearInterval(timerThree);
 
-var otherP = function(){
-  var otherP = document.createElement("p");
-  otherP.textContent = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
-  otherP.style.color = "blue";
-  body.appendChild(otherP);
-}
-var intervalOne = setInterval(otherP, 5000);
+var singRefrain = function(){
+  var nahNah = document.createElement('p');
+  nahNah.style.color = 'red';
+  nahNah.textContent = 'Nah nah nah nah nah nah nah, nah nah nah nah, Hey Jude';
+  body.appendChild(nahNah);
+};
 
-// clears interval, keeping the Beatles from singing.
+var intervalOne = setInterval(singRefrain, 5000);
 
-setTimeout(function(){
-    var pTag = document.createElement("p");
-    pTag.textContent = "You must really like this page...";
-    pTag.style.color = "red";
-    body.appendChild(pTag);
-})
-var timeoutOne = setTimeout(pTag, 15000);
+// clears interval, keeping the beatles from singing
+
+var makeObservation = function(){
+  var observation = document.createElement('p');
+  observation.style.color = "blue";
+  observation.textContent = 'Wow, you must really like this page.';
+  body.appendChild(observation);
+};
+
+var timeoutOne = setTimeout(makeObservation, 15000);
 
 var button = document.querySelector("button");
 
@@ -57,8 +61,7 @@ button.addEventListener('click', function(){
   clearInterval(intervalOne);
   clearTimeout(timeoutOne);
   this.parentNode.removeChild(this);
-});
-
+});t
 
 
 
