@@ -5,13 +5,18 @@
 Answer the following questions:
 
 1. What is Firebase?
-  + What is the company?
-  + What is the technology?
-1. Why would someone use it; what is it for?
-1. What technologies does it replace?
+  + What is the company? Firebase is host for client API libraries; allows intergration with Node, etc
+  + What is the technology? cloud technology; real-time database hosting; simple login (authenticates users w/ social login providers(fb, linkedin, google))
+1. Why would someone use it; what is it for? It builds real-time apps.
+1. What technologies does it replace? consolidates separate API, backend databases (Redis/Heroku), & authentication modules into one;
   + What are the pros/cons of using it versus a competing technology?
+    Pros: free initiation, SSL security/authentication
+    Cons: indexes must be built manually (event log, too), data validation for child nodes must be set separately
 1. How do you use it?
   + Where do you start when using it?
+    Install firebase.js client; sets app as a variable; writing data as a .set;
+    .push to display response to user; .on
+
 
 ***Do not go on. We will answer the above questions as a class first!***
 
