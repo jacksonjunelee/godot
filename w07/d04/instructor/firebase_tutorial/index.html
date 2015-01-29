@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Firebase Tutorial</h1>
-          <div id='messagesDiv'></div>
+      <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
     <script>
@@ -28,20 +28,18 @@
        displayChatMessage(message.name, message.text);
       });
 
-  myDataRef.on('child_removed',function(){
-    console.log('child_removed fired!');
-  });
-    myDataRef.on('child_changed',function(){
-      console.log('child_changed fired!');
-    });
-    myDataRef.on('value',function(){
-      console.log('value fired!');
-    });
-
-
+      myDataRef.on('child_removed',function(){
+        console.log('child_removed fired!');
+      });
+      myDataRef.on('child_changed',function(){
+        console.log('child_changed fired!');
+      });
+      myDataRef.on('value',function(){
+        console.log('value fired!');
+      });
 
       function displayChatMessage(name, text) {
-        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('<div/>').text(text).prepend($('<em/>').text(name +': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
     </script>
