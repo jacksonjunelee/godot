@@ -62,7 +62,7 @@ $button.on("click", function(){
   $div.fadeIn("slow", function(){
     setTimeout( function(){ $div.fadeOut("slow"); }, 8000);
   });
-  $body.append($div);
+ [''] $body.append($div);
 });
 
 

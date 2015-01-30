@@ -53,10 +53,9 @@
       });
 
       var i = 0;
-      // var blogLimit = (($('#messagesDiv').children().length - 1) >= 3);
-
+      var blogLimit = ($('#messagesDiv').children().length >= 3);
       function displayChatMessage(name, text) {
-      var $bye = $('<div>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      var $bye = $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
       $bye.attr("id", i);
       makeButton(i);
       updateButton(i);
@@ -64,36 +63,29 @@
       i+=1;
       };
 
-      // if(blogLimit === true) {
+      if($('#messagesDiv').children().length >= blogLimit) {
         var makeButton = function(num){
-          var $button = $("<button>").text("bye bye!");
+          var $makeButton = $("<button>").text("bye bye!");
           console.log("runs!");
-            $button.on('click',function(){
+            $makeButton.on('click',function(){
             $('#'+num.toString()).remove();
-            $button.remove();
+            $makeButton.remove();
             });
-            makeButton();
-            $('#messagesDiv').append($button);
-        }
+            // makeButton();
+            $('#messagesDiv').append($makeButton);
+        };
 
-
-      // };
-
-      // if(blogLimit === true) {
-      //   var updateButton = function(num){
-      //   var $button = $("<button>").text("Update text!");
-      //   console.log("runs!");
-      //     $button.on('click',function(){
-      //     $('#'+num.toString()).add();
-      //     $button.add();
-      //     });
-      //     updateButton();
-      //   }
-
-      //   $('#messagesDiv').append($button);
-      // };
-
-
+        var updateButton = function(num){
+        var $updateButton = $("<button>").text("Update text!");
+        console.log("runs!");
+          $updateButton.on('click',function(){
+            $('#'+num.toString()).text('#messageInput');
+            $updateButton.remove();
+          });
+          // updateButton();
+          $('#messagesDiv').append($updateButton);
+        };
+      };
 
     </script>
   </body>

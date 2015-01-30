@@ -53,4 +53,5 @@ var makeHobbits = function() {
   $li.hobbit.text('some text')
   // Append the ul#hobbits to the article.land representing "The Shire"
   // (the first article tag on the page)
+  articles(0).append('Some text')
 };
