@@ -33,3 +33,8 @@ SELECT students.*, houses.*
 FROM students
 INNER JOIN houses
 ON STUDENTS.house_id = houses.id;
+
+SELECT students.fname, houses.*
+FROM students
+INNER JOIN houses
+ON STUDENTS.house_id = houses.id;
