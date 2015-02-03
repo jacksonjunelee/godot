@@ -5,10 +5,16 @@
   <title>Animations</title>
 
   <link rel='stylesheet' type='text/css' href='stylesheets/normalize.css'>
+  <link rel='stylesheet' type='text/css' href='stylesheets/main.css'>
+  <link rel='stylesheet' type='text/css' href='stylesheets/animate.css'>
   <style>
-    /* Your style here. */
+    /*h1 {
+      -webkit-animation-duration: 3s;
+      -moz-animation-delay: 2s;
+      -vendor-animation-iteration-count: infinite;
+    };*/
   </style>
-  
+
   <script type="text/javascript" src="scripts/jquery.js"></script>
 </head>
 <body>
@@ -28,7 +34,18 @@
     </div>
   </div>
   <script>
-    // Your scripts here.
+    window.addEventListener('load', function(event) {
+      $('h1').addClass('animated fadeIn');
+      $('li').addClass('animated bounceInLeft').addClass('hide');
+
+      for (var i = 0, len = 4; i < len; i++) {
+        setTimeout(function() {
+        $('li').eq(i).removeClass('hide');
+        } , 1000 + 500*i ); //end timeout
+      }; //end for loop
+    }); //end addEventListener
+
+
   </script>
 </body>
 </html>
