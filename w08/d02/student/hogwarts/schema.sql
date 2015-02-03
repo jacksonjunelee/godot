@@ -13,6 +13,11 @@ CREATE TABLE students (
   house_id INTEGER REFERENCES houses (id)
 );
 
+CREATE TABLE death_eater_memberships(
+  id SERIAL PRIMARY KEY,
+  joined_on TIMESTAMP,
+  student_id INTEGER REFERENCES students (id)
+);
 -- INSERT INTO students
 --   (fname, lname, house_id) VALUES
 --   ('Fred', 'Weasly', 1),
@@ -38,3 +43,13 @@ SELECT students.fname, houses.*
 FROM students
 INNER JOIN houses
 ON STUDENTS.house_id = houses.id;
+
+SELECT students.fname, death_eater_memberships.*, houses.name
+FROM students
+INNER JOIN death_eater_memberships
+ON death_eater_memberships.student_id = students.id
+INNER JOIN houses
+ON STUDENTS.house_id = houses.id
+WHERE houses.name != 'Slytherin';
+
+
