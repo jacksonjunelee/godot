@@ -5,9 +5,10 @@
   <title>Animations</title>
 
   <link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
-
+  <link rel="stylesheet" type="text/css" href="stylesheets/cards.css">
   <link rel='stylesheet' type='text/css' href='stylesheets/normalize.css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
   <style>
     /* Your style here. */
     #title {
@@ -22,6 +23,27 @@
       -o-animation-duration:      0.5s;
       animation-duration:         0.5s;
     } /* use multiple selectors to increase the specificity! */
+    .card {
+      position: absolute;
+      margin-left: -32px;
+    }
+
+    #deck {
+      top: 216px;
+      left: 50%;
+    }
+    .west {
+      left: 20%;
+    }
+    .north {
+      left: 40%;
+    }
+    .east {
+      left: 60%;
+    }
+    .south {
+      left: 80%;
+    }
   </style>
 
   <script type="text/javascript" src="scripts/jquery.js"></script>
@@ -38,13 +60,17 @@
           <li class="animated bounceInLeft hide">Option Four</li>
         </ul>
       </nav>
-      <section class="table">
+      <section class="animated bounceInRight table">
+        <div class="animated fadeIn card outline west" >West</div>
+        <div class="animated fadeIn card outline north">North</div>
+        <div class="animated fadeIn card outline east" >East</div>
+        <div class="animated fadeIn card outline south">South</div>
+        <div id="deck" class="animated pulse card deck">Deck</div>
       </section>
     </div>
   </div>
   <script>
     // Your scripts here.
-
     // vendor prefix animationend events from https://github.com/daneden/animate.css#usage
     var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 
@@ -71,10 +97,25 @@
     window.addEventListener("load", function(e) {
       var $title = $("#title"),
           $lis   = $("nav li");
+          $divs  = $("div");
+          $id    = $("#deck");
+
+      $(".card").addClass('.animated fadeIn hide');
+      $lis.eq(3).on(animationEnd, function(e){
+        $(".card").removeClass("hide");
+
+      $("#deck").addClass('.animated fadeIn hide');
+      $id.eq(0).on(animationEnd, function(e){
+        $("#deck").removeClass("fadeIn hide");
+        $("#deck").addClass("pulse");
+      });
+
 
       // now we're talking!
       $title.on(animationEnd, function(e) {
         cascadeEffect($lis);
+        fadeInEffect($divs);
+        pulseEffect($id);
       });
     });
   </script>
