@@ -9,7 +9,7 @@ CREATE TABLE artists (
 
 CREATE TABLE paintings (
   id SERIAL PRIMARY KEY,
-  title VARCHAR NOT NULL
+  title VARCHAR NOT NULL,
   artist_id integer REFERENCES artists(id)
 );
 

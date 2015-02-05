@@ -13,9 +13,10 @@ paintings.find_by(id: 1)
 # Return the painting with a name of "Guernica"
 paintings.find_by(title: "Guernica")
 # Return all the paintings that "Pablo Picasso" painted
-
+paintings.where(artist_id: 2)
 # Return the artist of "Guernica"
-
+paintings.find_by(title: "Guernica")
 # Change Vincent Van Gogh's nationality to "American"
-
+american = artists.find_by(nationality: "Dutch").update(nationality: "American")
 # Change "Starry Night" to be one of Pablo Picasso's paintings
+starry.update({title: "Starry Night", artist_id: 2})
