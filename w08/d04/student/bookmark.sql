@@ -11,9 +11,10 @@ CREATE TABLE bookmarks (
 );
 
 # pseudo code for an Active Record Pattern
-class User
+class User < ActiveRecord::Base
 end
-class Bookmark
+
+class Bookmark < ActiveRecord::Base
 end
 
 u1 = User.new
