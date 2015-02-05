@@ -9,7 +9,8 @@ CREATE TABLE artists (
 
 CREATE TABLE paintings (
   id SERIAL PRIMARY KEY,
-  title VARCHAR UNIQUE REFERENCES artists(name)
+  title VARCHAR NOT NULL
+  artist_id integer REFERENCES artists(id)
 );
 
 INSERT INTO artists
@@ -20,11 +21,11 @@ VALUES
   ('Katsushika Hokusai', 'Japanese');
 
 INSERT INTO paintings
-  (title)
+  (title, artist_id)
 VALUES
-  ('Starry Night'),
-  ('Cafe Terrace at Night'),
-  ('Guernica'),
-  ('The Old Guitarist'),
-  ('The Great Wave off Kanagawa'),
-  ('Red Fuji');
+  ('Starry Night', 1),
+  ('Cafe Terrace at Night', 1),
+  ('Guernica', 2),
+  ('The Old Guitarist', 2),
+  ('The Great Wave off Kanagawa', 3),
+  ('Red Fuji', 3);
