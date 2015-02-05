@@ -1,6 +1,7 @@
 require 'pry'
 require 'pg'
 require 'active_record'
+require_relative 'student'
 
 ActiveRecord::Base.establish_connection(
   adapter:  'postgresql',
@@ -10,3 +11,5 @@ ActiveRecord::Base.establish_connection(
 )
 
 ActiveRecord::Base.logger = ActiveSupport::Logger.new($stdout)
+
+binding.pry
