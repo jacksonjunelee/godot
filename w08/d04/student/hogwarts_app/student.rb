@@ -1,11 +1,16 @@
-class Student < ActiveRecord::Base
+# create table students (
+#   id serial PRIMARY KEY,
+#   fname varchar NOT NULL,
+#   lname varchar NOT NULL,
+#   house_id integer REFERENCES houses(id)
+# );
 
-  students = Student.all
-  weasley = Student.find_by(lname: 'Weasley')
-  # s = Student.new
+class Student < ActiveRecord::Base
 
 
 end
+
+
 
 
 
