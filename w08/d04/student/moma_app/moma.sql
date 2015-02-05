@@ -9,7 +9,7 @@ CREATE TABLE artists (
 
 CREATE TABLE paintings (
   id SERIAL PRIMARY KEY,
-  title VARCHAR UNIQUE
+  title VARCHAR UNIQUE REFERENCES artists(name)
 );
 
 INSERT INTO artists
