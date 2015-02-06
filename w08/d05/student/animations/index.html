@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/cards.css">
   <link rel='stylesheet' type='text/css' href='stylesheets/normalize.css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.css">
   <style>
     /* Your style here. */
     #title {
@@ -46,6 +47,7 @@
   </style>
 
   <script type="text/javascript" src="scripts/jquery.js"></script>
+  <script type="text/javascript" src="scripts/jquery-ui.js"></script>
   <script type="text/javascript" src="scripts/lodash.js"></script>
 </head>
 <body>
@@ -79,7 +81,8 @@
         $currentCardEl,
         deckOfCards,
         currentDeck,
-        deckIsShuffled = false;
+        deckIsShuffled = false,
+        lastCard;
 
     deckOfCards = [
       "dA","dK","dQ","dJ","d10","d09","d08","d07","d06","d05","d04","d03","d02",
@@ -115,7 +118,29 @@
       return $('<div class="card '+card+'">'+card+'</div>')
         .css({top: "216px", left: "50%"})
         .addClass("animated flipInY")
+        .one('click', function(event) {
+          $(event.target).css({top: "40px", left: nextCardGoesWhere + "%"})
+          // .animate({height: 'toggle'}, 2000)
+          // .animate({height: 'toggle'}, 2000)
+          ;
+        })
+        // .draggable({revert: "invalid", top: "216px", left: "50%"})
         .appendTo($table);
+    }
+    function nextCardGoesWhere () {
+      if (lastCard == 20) {
+        lastCard = 40;
+        return 40;
+      } else if (lastCard == 40) {
+        lastCard = 60;
+        return 60;
+      } else if (lastCard == 60) {
+        lastCard = 80;
+        return 80;
+      } else {
+        lastCard = 20;
+        return 20;
+      }
     }
 
     window.addEventListener("load", function(e) {
