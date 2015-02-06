@@ -10,8 +10,9 @@ require_relative 'models/space_traveler'
 ActiveRecord::Base.establish_connection(
   adapter:  'postgresql',
   host:     'localhost',
-  username: 'Kamari',          # your username
+  username: 'kamari',          # your username
   database: 'data_space_db' # whatever postgres db you want to connect to
 )
 
 ActiveRecord::Base.logger = ActiveSupport::Logger.new($stdout)
+

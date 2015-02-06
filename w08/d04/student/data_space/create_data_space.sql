@@ -43,7 +43,7 @@ CREATE TABLE space_travelers (
   name      VARCHAR(100) NOT NULL,
   role      roles        DEFAULT 'Spaceflight Participant',
   born_on   DATE         NOT NULL,
-  gender    genders      NOT NULL,
+  gender    genders      ENUM,
   nation_id INTEGER      REFERENCES nations(id)
 );
 CREATE TABLE space_programs (
