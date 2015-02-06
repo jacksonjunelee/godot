@@ -1,1 +1,33 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS purchase;
+DROP TABLE IF EXISTS movie;
+DROP TABLE IF EXISTS genre;
+
+CREATE TABLE user (
+ id SERIAL PRIMARY KEY,
+ email VARCHAR (100) UNIQUE,
+ born_on DATE
+);
+
+CREATE TABLE purchase (
+ id SERIAL PRIMARY KEY,
+
+);
+
+CREATE TABLE movie (
+ id SERIAL PRIMARY KEY,
+
+);
+
+CREATE TABLE genre (
+ id SERIAL PRIMARY KEY,
+
+);
+
+
+
+
+
+
+
 
