@@ -6,7 +6,8 @@ DROP TABLE IF EXISTS genre;
 CREATE TABLE users (
  id SERIAL PRIMARY KEY,
  email VARCHAR (100) UNIQUE,
- born_on DATE
+ born_on DATE,
+ balance money default 0
 );
 
 CREATE TABLE purchases (
@@ -15,16 +16,20 @@ CREATE TABLE purchases (
  amount INTEGER default 1
 );
 
+CREATE TYPE ratings AS ENUM ('G', 'PG', 'PG-13', 'R', 'NC-17');
+
 CREATE TABLE movies (
  id SERIAL PRIMARY KEY,
- purchase_price money,
- rental_price money,
- available_on date,
- description VARCHAR NOT NULL,
- rating ENUM default 5
+ purchase_price money default 14.99,
+ rental_price money default 3.99,
+ released_on date,
+ description VARCHAR (1000) NOT NULL,
+ rating ENUM default 'PG-13',
+ image URL,
+ runtime INTEGER,
+ created_at TIMESTAMP current_time,
+ updated_at TIMESTAMP current_time
 );
-
-CREATE TYPE ratings AS ENUM (1, 2, 3, 4, 5)
 
 CREATE TABLE genres (
  id SERIAL PRIMARY KEY,
