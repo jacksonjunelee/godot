@@ -1,5 +1,7 @@
 require 'pry'
 require 'active_record'
+require 'ffaker'
+
 require_relative './config.rb'
 require_relative '/models/user.rb'
 require_relative '/models/purchase.rb'
