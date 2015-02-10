@@ -1,0 +1,9 @@
+<h2>Create a new user!</h2>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :login, "Email:" %><br />
+  <%= f.text_field :login %><br />
+  <%= f.label :born_on, "Birthdate:" %><br />
+  <%= f.date_field :born_on %><br />
+  <%= f.submit %>
+<% end %>
