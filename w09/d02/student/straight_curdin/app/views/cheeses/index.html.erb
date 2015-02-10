@@ -1,0 +1,13 @@
+<h1>Большой зал сыров!</h1>
+
+<div class="cheeses collection">
+  <% @cheeses.each do |cheese| %>
+    <div class="cheese">
+      <ul>
+        <li><%= link_to(cheese.name, cheese_path(cheese)) %>
+            <%= button_to("Eat this cheese!", cheese_path(cheese), method: "delete") %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<h2>Создать новый сыр!</h2>
+
+<%= form_for(@cheese) do |c| %>
+  <%= c.label :name, "Name:" %><br />
+  <%= c.text_field :name %><br />
+  <%= c.label :milk_type, "Milk Type:" %><br />
+  <%= c.text_field :milk_type %><br />
+  <%= c.label :description, "Description:" %><br />
+  <%= c.text_field :description %><br />
+  <%= c.submit %>
+<% end %>
