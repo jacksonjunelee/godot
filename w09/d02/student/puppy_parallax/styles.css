@@ -22,6 +22,22 @@ img {
   width: 30%;
 }
 
+.top-left {
+  position: relative;
+  z-index: 3;
+}
+
+.top-center {
+  position: relative;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.top-right {
+  position: relative;
+  z-index: 0;
+}
+
 .break {
   position: relative;
   background-color: goldenrod;
