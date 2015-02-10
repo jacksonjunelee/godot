@@ -4,8 +4,8 @@ require 'active_record'
 ActiveRecord::Base.establish_connection(
   adapter:  'postgresql',
   host:     'localhost',
-  username: '...',
-  database: 'popcorn_app_development'
+  username: 'kamari',
+  database: 'popcorn_project_development'
 )
 
 # Logging
