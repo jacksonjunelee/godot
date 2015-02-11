@@ -2,14 +2,34 @@ require 'rspec'
 
 class Luhn
 
-  def valid_credit_card?(num)
+  # def valid?(num)
+  #   num.split("").
+  #   if num % 10 == 0
+  #     return true
+  #   else
+  #     return false
+  #   end
 
-    assert_equal valid_credit_card?("1234567890123456"), false
-    assert_equal valid_credit_card?("4408041234567893"), true
-    assert_equal valid_credit_card?("440804l234567893"), false
-    assert_equal valid_credit_card?("38520000023237"), true # diner's club
-    assert_equal valid_credit_card?("4222222222222"), true # visa cards have either 13 or 16 digits
+  def valid?(credit_card)
+    (*digits, checksum_digit) = s.split('').map(&:to_i)
+  result = 0
+  digits.reverse.each_with_index do |item, index|
+      if index.even?
+        if item.to_i*2>9
+          result += item.to_i*2-9
+        else
+          result += item.to_i*2
+        end
+      else
+        result +=item.to_i
+      end
+    end
 
+    if (result % 10) == 0
+      self.validation = "valid"
+    else
+      self.validation = "invalid"
+    end
   end
 
 end
