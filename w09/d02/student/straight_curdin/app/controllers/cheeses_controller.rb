@@ -30,7 +30,7 @@ class CheesesController < ApplicationController
   def update
     cheese = Cheese.find(params[:id])
     cheese.update(cheese_params)
-    redirect_to cheeses_path(cheese)
+    redirect_to cheese
   end
 
   def cheese_params
