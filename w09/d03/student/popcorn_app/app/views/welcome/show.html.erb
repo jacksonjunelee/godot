@@ -1,0 +1,7 @@
+<div class="movie">
+ <p>User Login: <%= @movie.login %></p>
+ <p>Current Balance: <%= @movie.balance %></p>
+ <p>Birthdate: <%= @movie.born_on %></p>
+</div>
+<%= link_to("Return to user list.", users_path) %>
+<%= link_to("Edit this user.", edit_user_path(@movie)) %>

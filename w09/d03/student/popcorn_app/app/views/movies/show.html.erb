@@ -1,0 +1,7 @@
+<div class="movie">
+ <p>Movie Title: <%= @movie.title %></p>
+ <p>Purchase Price: <%= @movie.purchase_price %></p>
+ <p>Rental Price: <%= @movie.rental_price %></p>
+</div>
+<%= link_to("Return to movie list.", users_path) %>
+<%= link_to("Edit this movie.", edit_user_path(@user)) %>
