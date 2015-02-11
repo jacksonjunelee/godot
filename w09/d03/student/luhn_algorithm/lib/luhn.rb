@@ -2,14 +2,6 @@ require 'rspec'
 
 class Luhn
 
-  # def valid?(num)
-  #   num.split("").
-  #   if num % 10 == 0
-  #     return true
-  #   else
-  #     return false
-  #   end
-
   def self.valid?(account_number)
     (*digits, checksum_digit) = s.split('').map(&:to_i)
   result = 0
