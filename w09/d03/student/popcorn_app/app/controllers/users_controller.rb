@@ -3,10 +3,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def test
-
-  end
-
   def show
     @user = User.find(params[:id])
   end
@@ -22,13 +18,12 @@ class UsersController < ApplicationController
 
   def destroy
     User.destroy(params[:id])
-    redirect_to  users_path
+    redirect_to users_path
   end
 
   def edit
     @user = User.find(params[:id])
   end
-
 
   def update
     user = User.find(params[:id])
