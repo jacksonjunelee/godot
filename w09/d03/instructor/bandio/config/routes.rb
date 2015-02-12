@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
+  root to: 'welcome#index'
+
+  # In the line below, I'm 'naming' the route, so I can use 'search_path' in my link helpers
+  get '/events/search' => "events#search", :as => "search"
+  get '/events/results' => "events#results"
+
+  resources :venues do
+    resources :events
+  end
+
+  resources :bands
+  resources :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  get '/movies' => 'movies#index'
-  # resources :movies
-  get '/movies/search' => 'movies#search'
-  get '/movies/info/:imdb_id' => 'movies#show'
-  get '/movies/random' => 'movies#random'
 
-  get '/users/random' => 'users#random'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
