@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root 'users#index'
-  get '/test' => 'users#test'
-  resources :users, :movies
-
+  root 'welcome#show'
+  resources :users do
+    resources :purchases
+  end
+  resources :movies
   # root 'movies#index'
   # resources
 
