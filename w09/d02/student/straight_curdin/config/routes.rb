@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'cheeses#index'
+  get '/cheeses' => 'cheeses#index'
   resources :cheeses
 end
