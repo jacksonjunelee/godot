@@ -16,7 +16,7 @@ king = Author.create(name:"Stephen King", born_on: 19470921, died_on: 00000000, 
 
 mockingbird = Book.create(title:"To Kill A Mockingbird", released_on: 19600711, genre:"Southern Gothic")
 finn = Book.create(title:"Adventures of Huckleberry Finn", released_on:18850201 , genre:"Satirical Novel")
-shining = Book.create(title:"The Shining", released_on:, genre:"Horror")
+shining = Book.create(title:"The Shining", released_on: 19770128, genre:"Horror")
 
 boo = Character.create(name:"Boo Radley", gender:"male", quirk:"super shy")
 jim = Character.create(name:"Jim", gender:"male", quirk:"escaped former slave")
