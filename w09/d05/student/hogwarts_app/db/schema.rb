@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131030184440) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "name",       null: false
-    t.string   "img_url",    null: false
+    t.string   "image_url",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 20131030184440) do
   create_table "students", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "img_url",    null: false
-    t.integer  "houses_id"
+    t.integer  "house_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "houses_id"
   end
 
-  add_index "students", ["houses_id"], name: "index_students_on_houses_id", using: :btree
+  add_index "students", ["house_id"], name: "index_students_on_house_id", using: :btree
 
 end
