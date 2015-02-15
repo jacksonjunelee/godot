@@ -1,2 +1,8 @@
 <h1>Author List</h1>
-
+<% @authors.each do |author| %>
+  <div class="author">
+    <ul>
+      <li><%= author.name %></li>
+    </ul>
+  </div>
+<% end %>
