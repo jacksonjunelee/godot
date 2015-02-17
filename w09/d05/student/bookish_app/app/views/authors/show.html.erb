@@ -1,3 +1,9 @@
-<h2>Author Name:</h2>
-
-<p>Info</p>
+<div class="author">
+  <h2><%= @author.name %></h2>
+  <h3>Info
+    <p><%= @author.born_on %></p>
+    <p><%= @author.died_on %></p>
+    <p><%= @author.gender %></p>
+    <p><%= @author.has_pseudonym %></p>
+  </h3>
+</div>

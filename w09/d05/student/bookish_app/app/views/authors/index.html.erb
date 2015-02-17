@@ -1,8 +1,8 @@
-<h1>Author List</h1>
+<h1>Authors List</h1>
 <% @authors.each do |author| %>
   <div class="author">
     <ul>
-      <li><%= author.name %></li>
+      <li><a href='authors_path'></a><%= author.name %></li>
     </ul>
   </div>
 <% end %>
