@@ -2,7 +2,7 @@ require 'httparty'
 
 module OmdbApi
   def self.search(title)
-    binding.pry
+    # binding.pry
     url = "http://www.omdbapi.com/?s=#{title}&r=json"
     response = HTTParty.get(url)
     JSON.parse(response.body)["Search"]
