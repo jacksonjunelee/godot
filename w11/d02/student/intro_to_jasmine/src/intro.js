@@ -1,9 +1,14 @@
 var sleepIn = function(dayName) {
+<<<<<<< HEAD
   if (dayName == "Saturday" ||dayName == "Sunday") {
+=======
+  if (dayName == 'Saturday' || dayName == 'Sunday') {
+>>>>>>> d55eb380d8e56a960a5a37a8bd63f5bc982cc4c1
     return true;
   } else {
     return false;
   }
+<<<<<<< HEAD
 };
 
 var pluralize = function(list) {
@@ -33,3 +38,10 @@ var pluralize = function(list) {
 // }
 // return timestring;
 // }
+=======
+}
+
+var pluralize = function(list) {
+  return "lions, tigers and bears";
+}
+>>>>>>> d55eb380d8e56a960a5a37a8bd63f5bc982cc4c1

@@ -31,10 +31,18 @@ describe('pluralize', function(){
     // pending("This won't run until we comment it out");
     expect( pluralize(list) ).toEqual( "lions, tigers and bears" );
   });
+<<<<<<< HEAD
   // it("works on any array of strings", function(){
   //     var snacks = ["doritos", "apples", "candy", "cheetos"];
   //     expect( pluralize(snacks) ).toEqual("doritos, apples, candy and cheetos")
   // });
+=======
+  it("works on any array of strings", function(){
+    var snacks = ['doritos', 'apples', 'candy', 'cheetos'];
+    expect( pluralize(snacks) ).toEqual( "doritos, apples, candy and cheetos");
+
+  });
+>>>>>>> d55eb380d8e56a960a5a37a8bd63f5bc982cc4c1
 });
 
 describe('prettyTime', function(){
