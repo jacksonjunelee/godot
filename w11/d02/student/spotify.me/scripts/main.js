@@ -16,6 +16,7 @@ $(document).ready(function(){
       type: "GET",
       data: { q: searchTerm }
     }).done(function(data){
+      debugger
       var songs = data.tracks;
       var html = '';
       for(var i = 0; i < songs.length; i++){
