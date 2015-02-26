@@ -1,21 +1,25 @@
-var genUser = {
-  image_url: 'https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/654/phillip-lamplugh.jpg',
-  name: 'Phil',
-  age: 33
-};
+var $userInfo;
+var userData = {};
+
 $(document).ready(function(){
   console.log("main.js linked");
 
   // caches reference to commonly needed DOM elements
-  var $userInfo    = $(".user-info"),
-      $xButton     = $(".x"),
-      $heartButton = $(".heart"),
-      $matchesContainer = $(".matches-container");
+      $userInfo    = $(".user-info");
+  var $xButton     = $(".x"),
+      $heartButton = $(".heart");
+      // $matchesContainer = $(".matches-container");
 
 
   // grabs template as a string
   var templateSource = $("#tinder-template").html();
   genUserHTML = _.template(templateSource);
+
+  var matchesTemplateSource = $("#matches-template").html();
+  genMatchHTML = _.template(matchesTemplateSource);
+
+  var currentUser = {};
+  var matchHTML;
 
   var getNewUser = function(){
     $.ajax({
@@ -26,40 +30,24 @@ $(document).ready(function(){
       var user = data["results"][0]["user"];
       var firstName = user.name.first;
       var pictureURL = user["picture"]["large"];
-      newTinderHTML = genUserHTML({
-        image_url: pictureURL,
-        name: firstName,
-        age: 31
-      });
+      currentUser.image_url = pictureURL;
+      currentUser.name = firstName;
+      currentUser.age = 31;
+      newTinderHTML = genUserHTML(currentUser);
       $userInfo.html(newTinderHTML);
+      debugger
+      matchHTML = genMatchHTML(currentUser);
     });
   };
-
-  var matchesTemplateSource = $("#matches-template").html();
-  likeUserHTML = _.template(matchesTemplateSource);
-
-  var addToMatches = function(){
-    $.ajax({
-      url: "http://api.randomuser.me",
-      type: "GET",
-      dataType: "json"
-    }).done(function(data){
-      var user = data["results"][0]["user"];
-      var firstName = user.name.first;
-      var pictureURL = user["picture"]["thumbnail"];
-      likeTinderHTML = likeUserHTML({
-        image_url: pictureURL,
-        name: firstName
-      });
-      $matchesContainer.append(likeTinderHTML);
-    });
-  };
-
-  addToMatches();
-  $heartButton.on('click', addToMatches);
 
   getNewUser();
+
   $xButton.on("click", getNewUser);
 
+  $heartButton.on('click', function(){
+    debugger
+    $('.matches-container').append(matchHTML);
+    getNewUser();
+  });
 
 });
