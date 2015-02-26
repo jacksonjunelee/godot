@@ -13,6 +13,10 @@
   </div>
   <img src="images/tinder_logo.png" alt="the tinder logo" class="logo">
 
+  <div class="match clearfix">
+  <img src="http://api.randomuser.me/portraits/women/2.jpg" alt=""><span>Sarana</span>
+</div>
+
   <div class="iphone-wrapper">
     <div class="screen-overlay">
       <div class="user-info">
@@ -33,6 +37,11 @@
   <script id="tinder-template" type="application/template" >
     <img src="<%= image_url %>" alt="A picture of <%= name %>">
     <p><%= name %>, <%= age %></p>
+  </script>
+
+  <script id="matches-template" type="application/template" >
+    <img src="<%= image_url %>" alt="A picture of <%= name %>">
+    <p><%= name %></p>
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.3.1/lodash.min.js" type="text/javascript"></script>

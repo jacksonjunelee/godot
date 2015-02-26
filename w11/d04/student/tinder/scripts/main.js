@@ -1,49 +1,65 @@
-  $($xButton).on('click', function(){
-    $.ajax({
-      url: 'http://api.randomuser.me/',
-      type: 'GET',
-      dataType: 'json'
-    })
-    .done(function(data) {
-      console.log("success");
-      var user = data["results"][0]["user"];
-      var image_url = user["picture"]["medium"];
-      var image = $("<img>").attr("src", image_url);
-      $("matches-container").append(data);
-    });
-  });
-
-var philCo = {
+var genUser = {
   image_url: 'https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/654/phillip-lamplugh.jpg',
-  name: 'Phil L.',
-  age: '(Math.random() * 25) + 23'
-
+  name: 'Phil',
+  age: 33
 };
-
-var tinderUser = {
-  image_url: user["picture"]["medium"],
-  name: user["name"]["first"]
-}
-
 $(document).ready(function(){
   console.log("main.js linked");
 
   // caches reference to commonly needed DOM elements
   var $userInfo    = $(".user-info"),
       $xButton     = $(".x"),
-      $heartButton = $(".heart");
+      $heartButton = $(".heart"),
+      $matchesContainer = $(".matches-container");
 
 
+  // grabs template as a string
+  var templateSource = $("#tinder-template").html();
+  genUserHTML = _.template(templateSource);
 
-    var showTemplateSource = $("#tinder-template").html();
+  var getNewUser = function(){
+    $.ajax({
+      url: "http://api.randomuser.me",
+      type: "GET",
+      dataType: "json"
+    }).done(function(data){
+      var user = data["results"][0]["user"];
+      var firstName = user.name.first;
+      var pictureURL = user["picture"]["large"];
+      newTinderHTML = genUserHTML({
+        image_url: pictureURL,
+        name: firstName,
+        age: 31
+      });
+      $userInfo.html(newTinderHTML);
+    });
+  };
 
-    var generateTinderHTML = _.template(showTemplateSource);
+  var matchesTemplateSource = $("#matches-template").html();
+  likeUserHTML = _.template(matchesTemplateSource);
 
-    var philCoHTML = generateTinderHTML(philCo);
+  var addToMatches = function(){
+    $.ajax({
+      url: "http://api.randomuser.me",
+      type: "GET",
+      dataType: "json"
+    }).done(function(data){
+      var user = data["results"][0]["user"];
+      var firstName = user.name.first;
+      var pictureURL = user["picture"]["thumbnail"];
+      likeTinderHTML = likeUserHTML({
+        image_url: pictureURL,
+        name: firstName
+      });
+      $matchesContainer.append(likeTinderHTML);
+    });
+  };
 
-    $userInfo.html(philCoHTML);
+  addToMatches();
+  $heartButton.on('click', addToMatches);
 
-    debugger
+  getNewUser();
+  $xButton.on("click", getNewUser);
 
 
 });
