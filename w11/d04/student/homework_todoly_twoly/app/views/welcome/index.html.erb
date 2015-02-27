@@ -20,6 +20,8 @@
       <!--
         Rewrite the following to render with JavaScript templating and Ajax
        -->
+      <script id='task-list' type="text/template">
+
       <% @tasks.each do |task| %>
         <li data-is_complete="<%= task.complete? ? "true" : "false" %>" data-id="<%= task.id %>">
           <span class="description <%= task.complete? ? "complete" : "" %>">
@@ -28,6 +30,7 @@
           <span class="remove">&times;</span>
         </li>
       <% end %>
+      </script>
     </ul>
   </div>
 </div>
