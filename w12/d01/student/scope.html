@@ -1,63 +1,54 @@
 <!doctype html>
 <html>
-<head>
-  <script type="text/javascript" src='jquery.js'></script>
-  <script type="text/javascript" src='lodash.js'></script>
-  <script type="text/javascript" src='dog.js'>
-  </script>
-</head>
-<body>
-  <div class='content'>
-    <div class='dog'>
-      <!-- <h3>Dog's Name</h3>
-      <p>Age: dog's age</p>
-      <button class='bark'>Bark!</button> -->
+  <head>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="lodash.js"></script>
+   <script type="text/javascript" src="dog.js"></script>
+   <script type="text/javascript" src="main.js"></script>
+  </head>
+  <body>
+
+    <div class="content">
     </div>
-  </div>
-  <script>
-    var snoopDog = 'doggy dog';
 
-    var iterator = (function() {
-      var i = 0;
-      var newFunction = function() {
-        var snoopLion = 'jah';
-        console.log(i);
-        i++;
-      }
-      return newFunction;
-    })();
+    <script>
+var snoopDog = 'doggy dog';
 
-    var createIterator = (function(){
-      var i = 0;
-      var newFunction = function(){
-        console.log(i);
-        i++;
-        debugger
-      }
-     return newFunction;
-    })();
+var createIterator = function() {
+  var i = 0;
+  var newFunction = function() {
+    var snoopLion = 'jah';
+    console.log(i);
+    i++;
+    debugger
+  }
+  return newFunction;
+};
 
-    var sayMyName = function(){
-      console.log(this.name);
-    }
-    var saySomething = function(something){
-      console.log(this.name + ' ' + something);
-    }
+var sayMyName = function() {
+  console.log(this.name);
+}
 
-    for(var i=0, len=4; i<len; i++){
-      var b = i;
-      window["func" + i] = function(b){
-        console.log(b);
-      }
-    }
-  </script>
+var saySomething = function(something) {
+  console.log(this.name + ' ' + something);
+}
 
-  <script id ='dog-template' type="text/template">
-    <div class='dog'>
-      <h3><%= name %></h3>
-      <p>Age: <%= age %></p>
-      <button class='bark'>Bark!</button>
-    </div>
-  </script>
-</body>
+for(var i=0, len=4; i<len; i++) {
+  var b = i;
+  window["func" + i] = function(b) {
+    console.log(b);
+  }
+}
+
+
+    </script>
+
+    <script id="dog-template" type="text/template">
+      <div class="dog">
+        <h3><%= name %></h3>
+        <p>Age: <%= age %></p>
+        <button class="bark">Bark!</button>
+      </div>
+    </script>
+  </body>
 </html>

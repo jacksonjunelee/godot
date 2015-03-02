@@ -1,13 +1,12 @@
-var $contentDiv,
-    $template,
-    generateNewTemplate;
-
 console.log('woof Dog "class" loaded! ');
 
-var Dog = function(name){
+var app = {};
+
+app.Dog = function(name, parentDiv){
   this.name = name;
   this.age = 0;
-};
+  this.$parentDiv = parentDiv;
+}
 
 // lassie = new Object()
 // lassie = Object.create(Dog.prototype);
@@ -15,17 +14,24 @@ var Dog = function(name){
 // lassie.name = name;
 // lassie.age = 0;
 
-Dog.prototype = {
+app.Dog.prototype = {
   bark: function() { return 'bark bark!'; },
   sit: function() { return 'sits'; },
   save: function(boysName) { return 'woof (ok, ill save ' + boysName + ')!'; }
 };
 
-
+  app.Dog.prototype.addToPage = function() {
+    var stringOfHtml = this.render({name: this.name, age: this.age});
+    $(stringOfHtml).appendTo(this.$parentDiv)
+    .find('button').on('click', function(){
+      // alert(this.bark());
+      // debugger
+      alert(app.Dog.prototype.bark())
+    });
+  }
 
 $(document).ready(function(){
-  $content = $('.content');
-  $template = $('#dog-template');
-  generateNewTemplate = _.template($template.html());
-  $(generateNewTemplate({name: 'Lassie', age: 0})).append($contentDiv);
+    // debugger
+  app.Dog.prototype.$template = $('#dog-template'),
+  app.Dog.prototype.render = _.template(app.Dog.prototype.$template.html())
 });
