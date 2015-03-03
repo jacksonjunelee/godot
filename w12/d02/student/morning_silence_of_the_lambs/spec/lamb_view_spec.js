@@ -1,4 +1,4 @@
-xdescribe("LambView", function(){
+describe("LambView", function(){
   var lamb, lambView;
 
   beforeEach(function(){
@@ -12,6 +12,7 @@ xdescribe("LambView", function(){
 
   it("has a render method", function(){
     var lamb = new Lamb();
+    lamb.silence();
     var lambView = new LambView(lamb);
     var htmlFrag = '<p class="lamb">baaa</p>';
     expect( lambView.render() ).toEqual(htmlFrag);

@@ -1,4 +1,4 @@
-xdescribe('person', function(){
+describe('person', function(){
 
   var person, lotion, basket;
 
