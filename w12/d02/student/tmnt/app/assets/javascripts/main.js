@@ -25,20 +25,54 @@ splinter.fetch();
 // debugger
 
 var FootSoldier = Backbone.Model.extend({
-  url: '/foot_soldiers/1'
+  defaults: {
+    id: null,
+    height_in_inches: null,
+    weight_in_pounds: null,
+    image_url: null,
+    created_at: null,
+    updated_at: null
+  }
 });
 
-var soldier = new FootSoldier();
-
-soldier.fetch().done(function(){
-
-  soldier.set('image_url', 'http://forums.3dtotal.com/attachment.php?attachmentid=133257&stc=1&d=1235439726');
-  soldier.save();
-  var image_url = soldier.get('image_url');
-  console.log("The soldier's image_url is " + image_url);
+var FootSoldiersCollection = Backbone.Collection.extend({
+    url: '/foot_soldiers',
+    model: FootSoldier
 });
 
-soldier.get('image_url', 'height_in_inches');
+
+var footSoldiers = new FootSoldiersCollection();
+
+footSoldiers.fetch();
+
+var footSoldierThree = footSoldiers.get(3);
+
+footSoldierThree.get(height_in_inches);
+
+var VillainModel = Backbone.Model.extend({
+  defaults: {
+    id: null,
+    name: null,
+    species: null,
+    superpower: null
+  }
+});
+
+var VillainCollection = Backbone.Collection.extend({
+  url: '/villains',
+  model: Villain
+});
+
+var vileCreatures = new VillainCollection();
+
+vileCreatures.fetch().done(function(){
+  rocksteady = vileCreatures.get(4);
+  krang = villains.get(2);
+  shredder = villains.get(1);
+  speciesOfKrang = krang.get('species');
+  shredder.set('superpower', 'hatred');
+  shredder.save();
+});
 
 
 $(document).ready(function(){
