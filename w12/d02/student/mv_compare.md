@@ -1,11 +1,11 @@
 ## MV-Compare
 
-To avoid jQuery spaghetti, the web development community has created a number of libraries and frameworks that help structure your single-page applications. Each has its strengths and weaknesses. 
+To avoid jQuery spaghetti, the web development community has created a number of libraries and frameworks that help structure your single-page applications. Each has its strengths and weaknesses.
 
 #### Libraries and Frameworks
 
 - A **library** performs specific, well-defined operations. It does not enforce a workflow for developing applications.
-    - examples of client-side libraries: 
+    - examples of client-side libraries:
       - underscore.js
       - backbone.js
       - moment.js
@@ -19,16 +19,18 @@ To avoid jQuery spaghetti, the web development community has created a number of
 
 - **Short description of the tool**
 - **Who made it?** (if available)
+  - 2009
 - **Pattern** (MVC? V-only? etc.)
 - **Dependencies** (other libraries this tool depends on)
 - **Library or Framework?**
+  -"UI-ROUTER" (router for maintaining 'stateless view'), 'UI BOOTSTRAP' (twitter CSS), 'IONIC' (cross-platform mobile dev), 'ANGULAR TRANSLATE' (multiligual support in single browser), 'ANGULAR MATERIAL DESIGN' (fancy UIs)
 - **Minified filesize** (NOT g-zipped! Download the minified script and ⌘I it)
 - **Browser Support** (if available)
 - **GitHub Commits** (rounded to the nearest hundred)
 - **Commits per Kilobyte** (number of commits / minified kilobytes)
 - **GitHub Stars** (rounded to the nearest hundred)
 
-## Let's Research... 
+## Let's Research...
 
 #### Teams:
 
